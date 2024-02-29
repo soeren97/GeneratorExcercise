@@ -1,0 +1,6 @@
+# Folders
+Data/*
+
+# Extensions
+*.pyc
+*.egg-info
