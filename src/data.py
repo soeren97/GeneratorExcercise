@@ -40,18 +40,17 @@ def generate_fake_dataset(
             yield row
 
 
-def save_dataset(
-    iterator: Generator[dict[str, str], None, None],
+def create_dataset(
     name: str,
     num_rows: int,
 ) -> None:
     """Save the dataset iterativly.
 
     Args:
-        iterator (Generator[list[str, str], None, None]): Row generator.
         name (str): File name.
         num_rows (int): Desired number of rows.
     """
+    iterator = generate_fake_dataset(num_rows)
     fake_row = create_fake_row(None)
     with open(f"Data/{name}.csv", "w", newline="") as csvfile:
         csv_writer = csv.writer(csvfile)
