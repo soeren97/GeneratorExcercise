@@ -13,7 +13,7 @@ def create_fake_row(_: Any) -> dict[str, Any]:
     """Create a single fake row.
 
     Args:
-        _ (Any): Variable used imap.
+        _ (Any): Variable used for imap.
 
     Returns:
         dict[str, Any]: Fake Row.
@@ -61,5 +61,4 @@ def save_dataset(
 
         # Write rows
         for row in tqdm(iterator, total=num_rows, desc=f"Creating {name}.csv"):
-            csv_writer.writerow(row)
             csv_writer.writerow(row.values())
